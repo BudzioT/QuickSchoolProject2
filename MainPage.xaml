@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Desktop2025.MainPage"
+             BackgroundColor="Cornsilk">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="40, 30">
+
+            <Grid ColumnDefinitions="*">
+                <Rectangle BackgroundColor="White" 
+                           Fill="White"
+                           HorizontalOptions="Fill"
+                           HeightRequest="100"
+                           Grid.Column="0"
+                           x:Name="RectangleColors"/>
+            </Grid>
+            <Label Text="Dobierz kolor suwakami i zapisz przyciskiem" 
+                   TextColor="Black" />
+
+            <Grid ColumnDefinitions="auto, *, auto" ColumnSpacing="10">
+                <Label Text="R"
+                       TextColor="Black"
+                       Grid.Column="0"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"/>
+                <Slider Maximum="255"
+                        Minimum="0"
+                        ValueChanged="HandleRSlider"
+                        Value="255"
+                        x:Name="SliderR"
+                        Grid.Column="1"/>
+                <Label Text="255"
+                       TextColor="Black"
+                       VerticalOptions="Center"
+                       Grid.Column="2"
+                       x:Name="LabelR"
+                       HorizontalOptions="End"/>
+            </Grid>
+
+            <Grid ColumnDefinitions="auto, *, auto" ColumnSpacing="10">
+                <Label Text="G"
+                       TextColor="Black"
+                       Grid.Column="0"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"/>
+                <Slider Maximum="255"
+                        Minimum="0"
+                        x:Name="SliderG"
+                        Value="255"
+                        ValueChanged="HandleGSlider"
+                        Grid.Column="1"/>
+                <Label Text="255"
+                       TextColor="Black"
+                       VerticalOptions="Center"
+                       Grid.Column="2"
+                       x:Name="LabelG"
+                       HorizontalOptions="End"/>
+            </Grid>
+            
+            <Grid ColumnDefinitions="auto, *, auto" ColumnSpacing="10">
+                <Label Text="B"
+                       TextColor="Black"
+                       Grid.Column="0"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"/>
+                <Slider Maximum="255"
+                        Minimum="0"
+                        ValueChanged="HandleBSlider"
+                        Value="255"
+                        x:Name="SliderB"
+                        Grid.Column="1"/>
+                <Label Text="255"
+                       TextColor="Black"
+                       x:Name="LabelB"
+                       VerticalOptions="Center"
+                       Grid.Column="2"
+                       HorizontalOptions="End"/>
+            </Grid>
+
+            <Button Text="Pobierz"
+                    TextColor="Black"
+                    WidthRequest="150"
+                    Clicked="HandleButtonClick"
+                    HeightRequest="30"
+                    CornerRadius="0"
+                    BackgroundColor="Peru"
+                    HorizontalOptions="Center"/>
+
+            <Label Text="255, 255, 255"
+                   x:Name="LabelColor"
+                   BackgroundColor="White"
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   WidthRequest="150"
+                   HeightRequest="30"
+                   VerticalTextAlignment="Center"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
